@@ -31,7 +31,7 @@ bash <(curl -sL https://git.io/go-installer)
 
 Now, you can go grab a cup of coffee :coffee:, sit back :relieved: and relax while the magic happens! :crystal_ball:
 
-> **Note**  
+> **Note**
 > By default the script will create `.go` and `go` folders on your _HOME_ directory & add the needed variables to your _PATH_ variable.
 
 `$HOME/.go` is where Go will be installed.
@@ -50,11 +50,19 @@ Read more about [workspaces](https://go.dev/doc/code.html#Workspaces) in Go.
 
 ### Specifying a version to install 🧐
 
-By default, the script installs the latest version available.  
+By default, the script installs the latest version available.
 You can choose what version to install by adding the `--version` flag, followed by the version you want to install.
 
-```
+```bash
 bash go.sh --version 1.19.4
+```
+
+### Checking if a specific version is installed 🔍
+
+You can check if a specific version of Go is installed by using the `--version check` flag, followed by the version you want to check.
+
+```bash
+bash go.sh --version check 1.19.4
 ```
 
 ### Show Help Message 🍁
@@ -70,6 +78,27 @@ To show the following help message use `bash go.sh help`.
 ```bash
 bash go.sh remove
 ```
+
+### Running Tests Locally with Docker 🐳
+
+You can run tests locally using Docker to ensure a consistent environment and prevent side-effects on your host system. On CI environments, tests will run normally.
+
+To run tests locally, simply use the `make test` command, and all the magic will happen:
+
+```bash
+make test
+```
+
+This command will build the Docker image and run the tests inside the Docker container.
+
+### Using Makefile for Common Tasks 🛠️
+
+A `Makefile` is provided to simplify common tasks. Here are some useful commands:
+
+- Install Go: `make install`
+- Uninstall Go: `make uninstall`
+- Check if a specific version is installed: `make check-version VERSION=1.19.4`
+- Run tests: `make test`
 
 ## How it works ⚙️
 
