@@ -50,6 +50,38 @@ test:
 	$(call break, b )
 	$(call success, Tests completed successfully)
 
+# Install Go using the provided PowerShell script
+install-windows:
+	$(call log, Installing Go on Windows)
+	$(call break, b)
+	@powershell -ExecutionPolicy Bypass -File go.ps1 -Command install $(ARGS) || exit 1
+	$(call break, b)
+	$(call success, Installation completed)
+
+# Update Go using the provided PowerShell script
+update-windows:
+	$(call log, Updating Go on Windows)
+	$(call break, b)
+	@powershell -ExecutionPolicy Bypass -File go.ps1 -Command update $(ARGS) || exit 1
+	$(call break, b)
+	$(call success, Update completed)
+
+# Remove Go using the provided PowerShell script
+remove-windows:
+	$(call log, Removing Go on Windows)
+	$(call break, b)
+	@powershell -ExecutionPolicy Bypass -File go.ps1 -Command remove $(ARGS) || exit 1
+	$(call break, b)
+	$(call success, Removal completed)
+
+# Run tests using the provided PowerShell script
+test-windows:
+	$(call log, Running tests on Windows)
+	$(call break, b)
+	@powershell -ExecutionPolicy Bypass -File go.ps1 -Command test $(ARGS) || exit 1
+	$(call break, b)
+	$(call success, Tests completed successfully)
+
 # Display this help message
 help:
 	$(call log, $(APP_NAME) Makefile )
