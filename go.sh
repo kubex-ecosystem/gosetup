@@ -18,6 +18,12 @@ version_regex="[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]"
 VERSION_REGEX="[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]"
 is_latest_version="yes"
 
+if [[ -n "$NON_INTERACTIVE" ]] && [[ "$NON_INTERACTIVE" == "true" ]]; then
+  BYPASS_PROMPTS="true"
+else
+  BYPASS_PROMPTS=""
+fi
+
 function print_welcome() {
   echo -e "$($TEXT_COLOR $CYAN)
 \t   __________        _____   ________________    __    __    __________
@@ -29,15 +35,17 @@ ${RESET}"
 }
 
 function print_help() {
-  echo -e "\t$($TEXT_COLOR $BLUE)go.sh${RESET} is a tool that helps you easily install, update or uninstall Go\n
-  \t$($TEXT_COLOR $GREEN)-------------------------------  Usage  -------------------------------\n
-  \t$($TEXT_COLOR $YELLOW)bash go.sh${RESET}\t\t\t\tInstalls or update Go (if installed)
-  \t$($TEXT_COLOR $YELLOW)bash go.sh --version [version]${RESET}\t\tInstalls a specific version of Go
-  \t$($TEXT_COLOR $YELLOW)bash go.sh --version check [version]${RESET}\tChecks if a specific version of Go is installed
-  \t$($TEXT_COLOR $YELLOW)bash go.sh remove${RESET}\t\t\tUninstalls the installed version of Go
-  \t$($TEXT_COLOR $YELLOW)bash go.sh update${RESET}\t\t\tUpdates the installed version of Go
-  \t$($TEXT_COLOR $YELLOW)bash go.sh help${RESET}\t\t\t\tPrints this help message
-  "
+  if test -z $BYPASS_PROMPTS; then
+    echo -e "\t$($TEXT_COLOR $BLUE)go.sh${RESET} is a tool that helps you easily install, update or uninstall Go\n
+    \t$($TEXT_COLOR $GREEN)-------------------------------  Usage  -------------------------------\n
+    \t$($TEXT_COLOR $YELLOW)bash go.sh${RESET}\t\t\t\tInstalls or update Go (if installed)
+    \t$($TEXT_COLOR $YELLOW)bash go.sh --version [version]${RESET}\t\tInstalls a specific version of Go
+    \t$($TEXT_COLOR $YELLOW)bash go.sh --version check [version]${RESET}\tChecks if a specific version of Go is installed
+    \t$($TEXT_COLOR $YELLOW)bash go.sh remove${RESET}\t\t\tUninstalls the installed version of Go
+    \t$($TEXT_COLOR $YELLOW)bash go.sh update${RESET}\t\t\tUpdates the installed version of Go
+    \t$($TEXT_COLOR $YELLOW)bash go.sh help${RESET}\t\t\t\tPrints this help message
+    "
+  fi
 }
 
 function what_platform() {
@@ -256,8 +264,12 @@ function install_go() {
 
   if ! rmdir go &>/dev/null; then
     echo "$($TEXT_COLOR $RED)Failed to remove go directory${RESET}"
-    read -t 3 -r -p "Do you want to remove it manually? [y/n]: " option || option="n" # timeout after 3 seconds and default to no
-    [[ $option == "y" || $option == "Y" ]] && rm -rf go
+    if test -z $BYPASS_PROMPTS; then
+      read -t 3 -r -p "Do you want to remove it manually? [y/n]: " option || option="n" # timeout after 3 seconds and default to no
+      [[ $option == "y" || $option == "Y" ]] && rm -rf go
+    else
+      rm -rf go || exit 1
+    fi
   fi
 
   what_shell_profile
@@ -295,18 +307,20 @@ function update_go() {
   if [[ $current == "$latest" ]]; then
     echo "You already have that version of $($TEXT_COLOR $CYAN)Go${RESET} Installed!"
     echo "$($TEXT_COLOR $BLUE)Exiting, Bye!${RESET}"
-    exit
+    exit 0
   fi
 
   echo "Installing will remove the current installed version from '$GOROOT'"
 
   if [[ $1 == "update" ]]; then
-    # update is used to force update for testing on travis
-    # bypass read option
     option=""
   else
-    echo -e "Do you want to install $($TEXT_COLOR $GREEN)Go($latest)${RESET} and remove $($TEXT_COLOR $RED)Go($current)${RESET}? [ENTER(yes)/n]: \c"
-    read -r option
+    if test -z $BYPASS_PROMPTS; then
+      echo -e "Do you want to install $($TEXT_COLOR $GREEN)Go($latest)${RESET} and remove $($TEXT_COLOR $RED)Go($current)${RESET}? [ENTER(yes)/n]: \c"
+      read -r option
+    else
+      option="Y"
+    fi
   fi
 
   case $option in
@@ -337,7 +351,6 @@ function main() {
   if [[ $# == 1 ]]; then
     case $1 in
     "update")
-      # do nothing, continue execution normally
       ;;
     "remove")
       remove
