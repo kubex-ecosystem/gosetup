@@ -1,189 +1,131 @@
-<h1 align="left">Go Installer 🐹
-  <a target="_blank" href="https://kounter.kerolloz.dev">
-    <img align="right" src="https://kounter.kerolloz.dev/badge/kerolloz.go-installer?style=for-the-badge&color=69d7e4&label=Views&labelColor=69d7e4" />
-  </a>
-</h1>
+# **GoSetup 🐹 ⚡ - Instalador Inteligente para Go**
 
-<img align="right" src="https://user-images.githubusercontent.com/36763164/169433445-04f8485b-aa8d-45d0-a3cf-6e69c6456b2f.png" width="33%">
+🚀 **Instale e configure Golang de forma rápida e sem complicações** em **Linux**, **Mac** e **Windows**!
 
-> Install Golang on Linux, Mac or Windows <strike>with hassle of environment variables setting</strike>.
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/faelmori/go-installer)
+[![CI Status](https://github.com/faelmori/go-installer/actions/workflows/test.yml/badge.svg)](https://github.com/faelmori/go-installer/actions/workflows/test.yml)
 
-![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
-[![.github/workflows/test.yml](https://github.com/kerolloz/go-installer/actions/workflows/test.yml/badge.svg)](https://github.com/kerolloz/go-installer/actions/workflows/test.yml)
+---
 
-## How to use it (Linux/MacOS) 🤔
-
-### Installing (or even _updating_) Go ⬇️
-
-You can _clone_ the repository and then choose how you want to run the script:
-
-```shell
-git clone
-cd go-installer
-```
-
-- By running the script directly:
-
-    * Linux: `bash go.sh`
-    * MacOS: `./go.sh`
-    * Windows: `.\go.ps1`
-
-Or by simply running whatever suits you from the following commands (`wget` or `curl`):
-
+## 🚀 **Instalação Rápida**
+### 🏎️ **Método Instantâneo (wget/curl)**
 ```bash
-# downloads then runs the script
 wget https://git.io/go-installer.sh && bash go-installer.sh
 ```
-
 ```bash
-# doesn't download the script ~ runs the script directly
 bash <(curl -sL https://git.io/go-installer)
 ```
 
-Now, you can go grab a cup of coffee :coffee:, sit back :relieved: and relax while the magic happens! :crystal_ball:
-
-> **Note**
-> By default the script will create `.go` and `go` folders on your _HOME_ directory & add the needed variables to your _PATH_ variable.
-
-`$HOME/.go` is where Go will be installed.
-`$HOME/go` is the default workspace.
-
-To install Go to another location or set a custom workspace, set the environment variables `GOROOT` or `GOPATH` before installing (or uninstalling) Go.
-
-For example:
-
+### 🛠️ **Clonando e executando manualmente**
 ```bash
-export GOROOT=/opt/go            # where Go is installed
-export GOPATH=$HOME/projects/go  # your workspace
+git clone https://github.com/faelmori/go-installer.git
+cd go-installer
+bash go.sh
 ```
 
-Read more about [workspaces](https://go.dev/doc/code.html#Workspaces) in Go.
-
-### Specifying a version to install 🧐
-
-By default, the script installs the latest version available.
-You can choose what version to install by adding the `--version` flag, followed by the version you want to install.
-
+> 💡 **Dica:** O script instala Go em `$HOME/.go` e configura `$HOME/go` como workspace.  
+> Para personalizar esses diretórios, defina `GOROOT` e `GOPATH` antes da instalação:
 ```bash
-bash go.sh --version 1.19.4
+export GOROOT=/opt/go
+export GOPATH=$HOME/projects/go
 ```
 
-### Checking if a specific version is installed 🔍
+---
 
-You can check if a specific version of Go is installed by using the `--version check` flag, followed by the version you want to check.
+## 🎯 **Recursos**
+✅ **Instalação e atualização automáticas**  
+✅ **Definição de versão específica do Go**  
+✅ **Compatível com Windows, Linux e macOS**  
+✅ **Configuração de ambiente inteligente**  
+✅ **Suporte a múltiplas arquiteturas (ARM, AMD64, i386)**  
+✅ **Integração perfeita com workflows do GitHub Actions**  
 
+---
+
+## 🛠️ **Comandos Essenciais**
+### 🔹 **Instalar ou atualizar Go**
 ```bash
-bash go.sh --version check 1.19.4
+bash go.sh install
 ```
-
-### Show Help Message 🍁
-
-To show the following help message use `bash go.sh help`.
-
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/36763164/207301551-c686e069-df78-4d28-af78-bedd02b36354.gif" />
-</p>
-
-### Uninstalling Go ❌
-
-```bash
-bash go.sh remove
-```
-
-### Running Tests Locally with Docker 🐳
-
-You can run tests locally using Docker to ensure a consistent environment and prevent side-effects on your host system. On CI environments, tests will run normally.
-
-To run tests locally, simply use the `make test` command, and all the magic will happen:
-
-```bash
-make test
-```
-
-This command will build the Docker image and run the tests inside the Docker container.
-
-## How to use it (Windows) 🤔
-
-### Installing (or even _updating_) Go ⬇️
-
 ```powershell
 .\go.ps1 -Command install
 ```
 
-### Specifying a version to install 🧐
-
+### 🔹 **Definir uma versão específica**
+```bash
+bash go.sh install --version 1.19.4
+```
 ```powershell
 .\go.ps1 -Command install -Version 1.19.2
 ```
 
-### Checking if a specific version is installed 🔍
+### 🔹 **Verificar se uma versão já está instalada**
+```bash
+bash go.sh check --version 1.19.4
+```
+```powershell
+.\go.ps1 -Command check -Version 1.19.2
+```
 
+### 🔹 **Desinstalar Go**
+```bash
+bash go.sh remove
+```
 ```powershell
 .\go.ps1 -Command remove
 ```
 
-### Uninstalling Go ❌
-
-```powershell
-.\go.ps1 -Command update
+### 🔹 **Exibir menu de ajuda**
+```bash
+bash go.sh help
 ```
-
-### Show Help Message 🍁
-
 ```powershell
 .\go.ps1 -Command help
 ```
 
-### Running Tests Locally with Docker 🐳
+---
 
+## 🐳 **Rodando Testes com Docker**
+Evite interferências no sistema e garanta um ambiente consistente:
+```bash
+make test
+```
 ```powershell
 .\go.ps1 -Command test
 ```
 
-## Using Makefile for Common Tasks 🛠️
+---
 
-A `Makefile` is provided to simplify common tasks. Here are some useful commands:
+## 💡 **Contribua para o Projeto**
+1. ⭐ **Dê uma estrela no repositório** e ajude a fortalecer o projeto!  
+2. 🔄 **Faça um fork** e clone o repositório.  
+3. 🛠️ **Crie uma nova branch** e implemente suas mudanças.  
+4. 📌 **Envie um pull request** e aguarde revisão.  
+5. 🎉 **Junte-se à comunidade e acompanhe as novidades!**  
 
-- Linux/MacOS
-    - Install Go: `make install`
-    - Uninstall Go: `make uninstall`
-    - Check if a specific version is installed: `make check-version VERSION=1.19.4`
-    - Run tests: `make test`
+---
 
-- Windows
-    - Install Go: `make install-windows`
-    - Uninstall Go: `make uninstall-windows`
-    - Check if a specific version is installed: `make check-version-windows VERSION=1.19.4`
-    - Run tests: `make test-windows`
+## 🔍 **Como Funciona**
+O script executa os seguintes passos:
+1️⃣ **Detecta** sistema operacional e arquitetura.  
+2️⃣ **Verifica** a versão disponível do Go.  
+3️⃣ **Baixa e instala** a versão correta.  
+4️⃣ **Cria e configura** os diretórios (`GOROOT`, `GOPATH`).  
+5️⃣ **Adiciona ao PATH** automaticamente.  
+6️⃣ **Limpa** arquivos desnecessários para manter eficiência.  
 
-## How to Contribute 🤝
+---
 
-1. Fork the repository.
-2. Clone the forked repository.
-3. Create a new branch.
-4. Make your changes.
-5. Commit your changes.
-6. Push the changes to your fork.
-7. Create a pull request.
-8. Star the repository.
-9. Wait for the pull request to be reviewed and merged.
-10. Celebrate 🎉
+## 🛠️ **Usando em CI/CD com GitHub Actions**
+Automatize a instalação do Go na versão especificada no `go.mod`:
 
-## How it works ⚙️
+```yaml
+- name: Install Go (Exact version from go.mod)
+  run: |
+    export NON_INTERACTIVE=true
+    bash -c "$(curl -sSfL 'https://raw.githubusercontent.com/faelmori/go-installer/main/go.sh')" -s --version "$(grep '^go ' go.mod | awk '{print $2}')"
+```
 
-The script does the following steps:
+---
 
-- Checks if Go is already installed.
-- Detects the installed operating system (Linux or Mac).
-- Detects system architecture (armv6, armv8, amd64, i386).
-- Parses the <https://go.dev/dl> download page to find the latest version of Go that is available for your platform and architecture.
-- Exits if you have the latest version of Go already installed.
-- Downloads the latest version of Go.
-- Creates the needed directories for workspace and Go binaries.
-- Extracts the files of the downloaded package.
-- Adds the binaries to PATH environment variable.
-- Removes the downloaded installation file.
-
-https://user-images.githubusercontent.com/36763164/207317882-7e50e2de-628e-43f0-bf7c-bee6b1e68001.mp4
-
-<p align="center">🔥 WORKS LIKE A CHARM 🚀</p>
+<p align="center">🚀 **Simples. Eficiente. Poderoso.** 🔥</p>
