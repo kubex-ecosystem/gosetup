@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoSetup - Smart Go Installer</title>
+    <link rel="stylesheet" href="assets/styles.css"> <!-- Arquivo de estilos separado -->
+</head>
+<body>
+
+    <header>
+        <h1>🐹 GoSetup ⚡ - Smart Go Installer</h1>
+        <p>🚀 Easily install and configure Golang on Linux, Mac, and Windows—fast and hassle-free!</p>
+        <div class="badges">
+            <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg" alt="Contributions Welcome">
+            <img src="https://github.com/faelmori/go-installer/actions/workflows/test.yml/badge.svg" alt="CI Status">
+        </div>
+    </header>
+
+    <section id="installation">
+        <h2>🚀 Quick Installation</h2>
+        <p>Choose the best method for your environment:</p>
+        <h3>🏎️ Instant Method (wget/curl)</h3>
+        <code>wget https://git.io/go-installer.sh && bash go-installer.sh</code>
+        <code>bash <(curl -sL https://git.io/go-installer)</code>
+
+        <h3>🛠️ Cloning and Running Manually</h3>
+        <code>git clone https://github.com/faelmori/go-installer.git</code>
+        <code>cd go-installer && bash go.sh</code>
+
+        <p><strong>Tip:</strong> You can customize the installation directories:</p>
+        <code>export GOROOT=/opt/go</code>
+        <code>export GOPATH=$HOME/projects/go</code>
+    </section>
+
+    <section id="features">
+        <h2>🎯 Features</h2>
+        <ul>
+            <li>✅ Automatic installation & updates</li>
+            <li>✅ Specify a Go version to install</li>
+            <li>✅ Compatible with Windows, Linux, and macOS</li>
+            <li>✅ Smart environment configuration</li>
+            <li>✅ Supports multiple architectures (ARM, AMD64, i386)</li>
+            <li>✅ Seamless integration with GitHub Actions workflows</li>
+        </ul>
+    </section>
+
+    <section id="commands">
+        <h2>🛠️ Essential Commands</h2>
+        <div class="command-block">
+            <h3>🔹 Install or update Go</h3>
+            <code>bash go.sh install</code>
+            <code>.\go.ps1 -Command install</code>
+        </div>
+        <div class="command-block">
+            <h3>🔹 Specify a version</h3>
+            <code>bash go.sh install --version 1.19.4</code>
+            <code>.\go.ps1 -Command install -Version 1.19.2</code>
+        </div>
+        <div class="command-block">
+            <h3>🔹 Uninstall Go</h3>
+            <code>bash go.sh remove</code>
+            <code>.\go.ps1 -Command remove</code>
+        </div>
+    </section>
+
+    <section id="ci-cd">
+        <h2>🛠️ Using in CI/CD with GitHub Actions</h2>
+        <pre>
+- name: Install Go (Exact version from go.mod)
+  run: |
+    export NON_INTERACTIVE=true
+    bash -c "$(curl -sSfL 'https://raw.githubusercontent.com/faelmori/go-installer/main/go.sh')" -s --version "$(grep '^go ' go.mod | awk '{print $2}')"
+        </pre>
+    </section>
+
+    <footer>
+        <p>🚀 <strong>Simple. Fast. Powerful.</strong> 🔥</p>
+    </footer>
+
+</body>
+</html>
