@@ -13,7 +13,7 @@
         <p>🚀 Easily install and configure Golang on Linux, Mac, and Windows—fast and hassle-free!</p>
         <div class="badges">
             <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg" alt="Contributions Welcome">
-            <img src="https://github.com/faelmori/go-installer/actions/workflows/test.yml/badge.svg" alt="CI Status">
+            <img src="https://github.com/faelmori/gosetup/actions/workflows/test.yml/badge.svg" alt="CI Status">
         </div>
     </header>
 
@@ -21,12 +21,12 @@
         <h2>🚀 Quick Installation</h2>
         <p>Choose the best method for your environment:</p>
         <h3>🏎️ Instant Method (wget/curl)</h3>
-        <code>wget https://git.io/go-installer.sh && bash go-installer.sh</code>
-        <code>bash <(curl -sL https://git.io/go-installer)</code>
+        <code>wget https://raw.githubusercontent.com/faelmori/gosetup/refs/heads/main/go.sh && bash gosetup.sh</code>
+        <code>bash <(curl -sL https://git.io/gosetup)</code>
 
         <h3>🛠️ Cloning and Running Manually</h3>
-        <code>git clone https://github.com/faelmori/go-installer.git</code>
-        <code>cd go-installer && bash go.sh</code>
+        <code>git clone https://github.com/faelmori/gosetup.git</code>
+        <code>cd gosetup && bash go.sh</code>
 
         <p><strong>Tip:</strong> You can customize the installation directories:</p>
         <code>export GOROOT=/opt/go</code>
@@ -70,7 +70,7 @@
 - name: Install Go (Exact version from go.mod)
   run: |
     export NON_INTERACTIVE=true
-    bash -c "$(curl -sSfL 'https://raw.githubusercontent.com/faelmori/go-installer/main/go.sh')" -s --version "$(grep '^go ' go.mod | awk '{print $2}')"
+    bash -c "$(curl -sSfL 'https://raw.githubusercontent.com/faelmori/gosetup/main/go.sh')" -s --version "$(grep '^go ' go.mod | awk '{print $2}')"
         </pre>
     </section>
 

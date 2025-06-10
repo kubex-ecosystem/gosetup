@@ -2,24 +2,24 @@
 
 🚀 **Instale e configure Golang de forma rápida e sem complicações** em **Linux**, **Mac** e **Windows**!
 
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/faelmori/go-installer)
-[![CI Status](https://github.com/faelmori/go-installer/actions/workflows/test.yml/badge.svg)](https://github.com/faelmori/go-installer/actions/workflows/test.yml)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/faelmori/gosetup)
+[![CI Status](https://github.com/faelmori/gosetup/actions/workflows/test.yml/badge.svg)](https://github.com/faelmori/gosetup/actions/workflows/test.yml)
 
 ---
 
 ## 🚀 **Instalação Rápida**
 ### 🏎️ **Método Instantâneo (wget/curl)**
 ```bash
-wget https://git.io/go-installer.sh && bash go-installer.sh
+wget https://raw.githubusercontent.com/faelmori/gosetup/refs/heads/main/go.sh && bash gosetup.sh
 ```
 ```bash
-bash <(curl -sL https://git.io/go-installer)
+bash <(curl -sL https://git.io/gosetup)
 ```
 
 ### 🛠️ **Clonando e executando manualmente**
 ```bash
-git clone https://github.com/faelmori/go-installer.git
-cd go-installer
+git clone https://github.com/faelmori/gosetup.git
+cd gosetup
 bash go.sh
 ```
 
@@ -123,7 +123,7 @@ Automatize a instalação do Go na versão especificada no `go.mod`:
 - name: Install Go (Exact version from go.mod)
   run: |
     export NON_INTERACTIVE=true
-    bash -c "$(curl -sSfL 'https://raw.githubusercontent.com/faelmori/go-installer/main/go.sh')" -s --version "$(grep '^go ' go.mod | awk '{print $2}')"
+    bash -c "$(curl -sSfL 'https://raw.githubusercontent.com/faelmori/gosetup/main/go.sh')" -s --version "$(grep '^go ' go.mod | awk '{print $2}')"
 ```
 
 ---

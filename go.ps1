@@ -19,7 +19,7 @@ switch ($Command) {
 
             if ($LatestGoURL) {
                 Write-Output "Latest version URL: $LatestGoURL"
-                $InstallerPath = "$env:TEMP\go-installer.msi"
+                $InstallerPath = "$env:TEMP\gosetup.msi"
                 Invoke-WebRequest -Uri $LatestGoURL -OutFile $InstallerPath
                 Start-Process msiexec.exe -ArgumentList "/i $InstallerPath /quiet /norestart" -Wait
                 Remove-Item $InstallerPath
@@ -30,7 +30,7 @@ switch ($Command) {
         } else {
             Write-Output "Installing specified version of Go: $Version"
             $GoURL = "https://go.dev/dl/go${Version}.windows-amd64.msi"
-            $InstallerPath = "$env:TEMP\go-installer.msi"
+            $InstallerPath = "$env:TEMP\gosetup.msi"
             try {
                 Invoke-WebRequest -Uri $GoURL -OutFile $InstallerPath
                 Start-Process msiexec.exe -ArgumentList "/i $InstallerPath /quiet /norestart" -Wait
