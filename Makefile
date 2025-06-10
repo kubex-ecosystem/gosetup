@@ -1,4 +1,4 @@
-APP_NAME := go-installer
+APP_NAME := gosetup
 ROOT_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 SCRIPT_NAME := $(ROOT_DIR)go.sh
 TEST_SCRIPT_NAME := $(ROOT_DIR)test.sh
@@ -103,6 +103,6 @@ help:
 	$(call log,   make install ARGS='--version 1.16.3')
 	$(call break, b )
 	$(call log, For more information, visit: )
-	$(call log, 'https://github.com/kerolloz/go-installer' )
+	$(call log, 'https://github.com/faelmori/gosetup' )
 	$(call break, b )
 	$(call success, End of help message)
