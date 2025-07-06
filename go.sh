@@ -136,7 +136,7 @@ function extract_version_from() {
 
 function get_download_command() {
   if command -v curl &>/dev/null; then
-    echo "curl -s"
+    echo "curl --fail --ssl-reqd -sSfL"
   elif command -v wget &>/dev/null; then
     echo "wget -qO-"
   else
