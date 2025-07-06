@@ -2,23 +2,23 @@
 
 🚀 **Easily install and configure Golang on Linux, Mac, and Windows—fast and hassle-free!**
 
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/faelmori/gosetup)  
-[![CI Status](https://github.com/faelmori/gosetup/actions/workflows/test.yml/badge.svg)](https://github.com/faelmori/gosetup/actions/workflows/test.yml)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/rafa-mori/gosetup)  
+[![CI Status](https://github.com/rafa-mori/gosetup/actions/workflows/test.yml/badge.svg)](https://github.com/rafa-mori/gosetup/actions/workflows/test.yml)
 
 ---
 
 ## 🚀 **Quick Installation**
 ### 🏎️ **Instant Method (wget/curl)**
 ```bash
-wget https://raw.githubusercontent.com/faelmori/gosetup/refs/heads/main/go.sh && bash gosetup.sh
+wget https://raw.githubusercontent.com/rafa-mori/gosetup/refs/heads/main/go.sh && bash gosetup.sh
 ```
 ```bash
-bash <<< "curl -sSfL 'https://raw.githubusercontent.com/faelmori/gosetup/refs/heads/main/go.sh' | bash"
+bash <<< "curl -sSfL 'https://raw.githubusercontent.com/rafa-mori/gosetup/refs/heads/main/go.sh' | bash"
 ```
 
 ### 🛠️ **Cloning the Repository and Running Manually**
 ```bash
-git clone https://github.com/faelmori/gosetup.git
+git clone https://github.com/rafa-mori/gosetup.git
 cd gosetup
 bash go.sh
 ```
@@ -124,7 +124,7 @@ Automate Go installation based on the version specified in `go.mod`:
 - name: Install Go (Exact version from go.mod)
   run: |
     export NON_INTERACTIVE=true
-    bash -c "$(curl -sSfL 'https://raw.githubusercontent.com/faelmori/gosetup/main/go.sh')" -s --version "$(grep '^go ' go.mod | awk '{print $2}')"
+    bash -c "$(curl -sSfL 'https://raw.githubusercontent.com/rafa-mori/gosetup/main/go.sh')" -s --version "$(grep '^go ' go.mod | awk '{print $2}')"
 ```
 
 ---
