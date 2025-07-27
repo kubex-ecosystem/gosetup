@@ -103,6 +103,6 @@ help:
 	$(call log,   make install ARGS='--version 1.16.3')
 	$(call break, b )
 	$(call log, For more information, visit: )
-	$(call log, 'https://github.com/faelmori/gosetup' )
+	$(call log, 'https://github.com/rafa-mori/gosetup' )
 	$(call break, b )
 	$(call success, End of help message)
