@@ -1,10 +1,10 @@
-# ![GoSetup Banner](docs/assets/top_banner_b.png)
+# ![GoSetup Banner](docs/assets/sc_banner_md.png)
 
 ## **GoSetup 🐹 ⚡ - Smart Go Installer**
 
 🚀 **Easily install and configure Golang on Linux, Mac, and Windows—fast and hassle-free!**
 
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/rafa-mori/gosetup)  
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/rafa-mori/gosetup)
 [![License](https://img.shields.io/github/license/rafa-mori/gosetup.svg?style=flat)](https://github.com/rafa-mori/gosetup/blob/main/LICENSE)
 [![Version](https://img.shields.io/github/v/release/rafa-mori/gosetup.svg?style=flat)](https://github.com/rafa-mori/gosetup/releases)
 
@@ -30,7 +30,7 @@ cd gosetup
 bash go.sh
 ```
 
-> 💡 **Tip:** By default, Go will be installed in `$HOME/.go`, and `$HOME/go` will be set as the workspace.  
+> 💡 **Tip:** By default, Go will be installed in `$HOME/.go`, and `$HOME/go` will be set as the workspace.
 > You can customize these locations by setting `GOROOT` and `GOPATH` before installation:
 
 ```bash
@@ -42,12 +42,12 @@ export GOPATH=$HOME/projects/go
 
 ## 🎯 **Features**
 
-✅ **Automatic installation & updates**  
-✅ **Specify a Go version to install**  
-✅ **Compatible with Windows, Linux, and macOS**  
-✅ **Smart environment configuration**  
-✅ **Supports multiple architectures (ARM, AMD64, i386)**  
-✅ **Seamless integration with GitHub Actions workflows**  
+✅ **Automatic installation & updates**
+✅ **Specify a Go version to install**
+✅ **Compatible with Windows, Linux, and macOS**
+✅ **Smart environment configuration**
+✅ **Supports multiple architectures (ARM, AMD64, i386)**
+✅ **Seamless integration with GitHub Actions workflows**
 
 ---
 
@@ -121,23 +121,23 @@ make test
 
 ## 💡 **Contribute to the Project**
 
-1. ⭐ **Star the repository** to show support!  
-2. 🔄 **Fork** and clone the repository.  
-3. 🛠️ **Create a new branch** and make your changes.  
-4. 📌 **Submit a pull request** and wait for review.  
-5. 🎉 **Join the community and stay updated!**  
+1. ⭐ **Star the repository** to show support!
+2. 🔄 **Fork** and clone the repository.
+3. 🛠️ **Create a new branch** and make your changes.
+4. 📌 **Submit a pull request** and wait for review.
+5. 🎉 **Join the community and stay updated!**
 
 ---
 
 ## 🔍 **How It Works**
 
 The script follows these steps:
-1️⃣ **Detects** your operating system and architecture.  
-2️⃣ **Checks** the latest available Go version.  
-3️⃣ **Downloads & installs** the correct version.  
-4️⃣ **Sets up directories** (`GOROOT`, `GOPATH`).  
-5️⃣ **Adds Go binaries to PATH** automatically.  
-6️⃣ **Cleans up unnecessary files** to keep things efficient.  
+1️⃣ **Detects** your operating system and architecture.
+2️⃣ **Checks** the latest available Go version.
+3️⃣ **Downloads & installs** the correct version.
+4️⃣ **Sets up directories** (`GOROOT`, `GOPATH`).
+5️⃣ **Adds Go binaries to PATH** automatically.
+6️⃣ **Cleans up unnecessary files** to keep things efficient.
 
 ---
 
