@@ -2,8 +2,8 @@
 
 🚀 **Easily install and configure Golang on Linux, Mac, and Windows—fast and hassle-free!**
 
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/rafa-mori/gosetup)  
-[![CI Status](https://github.com/rafa-mori/gosetup/actions/workflows/test.yml/badge.svg)](https://github.com/rafa-mori/gosetup/actions/workflows/test.yml)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/kubex-ecosystem/gosetup)  
+[![CI Status](https://github.com/kubex-ecosystem/gosetup/actions/workflows/test.yml/badge.svg)](https://github.com/kubex-ecosystem/gosetup/actions/workflows/test.yml)
 
 ---
 
@@ -18,7 +18,7 @@ bash <<< "curl -sSfL 'https://raw.githubusercontent.com/rafa-mori/gosetup/refs/h
 
 ### 🛠️ **Cloning the Repository and Running Manually**
 ```bash
-git clone https://github.com/rafa-mori/gosetup.git
+git clone https://github.com/kubex-ecosystem/gosetup.git
 cd gosetup
 bash go.sh
 ```

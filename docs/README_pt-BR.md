@@ -4,9 +4,9 @@
 
 🚀 **Instale e configure o Golang facilmente no Linux, Mac e Windows—rápido e sem complicações!**
 
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/rafa-mori/gosetup)
-[![License](https://img.shields.io/github/license/rafa-mori/gosetup.svg?style=flat)](https://github.com/rafa-mori/gosetup/blob/main/LICENSE)
-[![Version](https://img.shields.io/github/v/release/rafa-mori/gosetup.svg?style=flat)](https://github.com/rafa-mori/gosetup/releases)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/kubex-ecosystem/gosetup)
+[![License](https://img.shields.io/github/license/rafa-mori/gosetup.svg?style=flat)](https://github.com/kubex-ecosystem/gosetup/blob/main/LICENSE)
+[![Version](https://img.shields.io/github/v/release/rafa-mori/gosetup.svg?style=flat)](https://github.com/kubex-ecosystem/gosetup/releases)
 
 ---
 
@@ -25,7 +25,7 @@ bash <(curl -sL https://git.io/gosetup)
 ### 🛠️ **Clonando o Repositório e Executando Manualmente**
 
 ```bash
-git clone https://github.com/rafa-mori/gosetup.git
+git clone https://github.com/kubex-ecosystem/gosetup.git
 cd gosetup
 bash go.sh
 ```
