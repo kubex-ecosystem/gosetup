@@ -2,6 +2,7 @@
 
 🚀 **Easily install and configure Golang on Linux, Mac, and Windows—fast and hassle-free!**
 
+
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/kubex-ecosystem/gosetup)
 [![CI Status](https://github.com/kubex-ecosystem/gosetup/actions/workflows/test.yml/badge.svg)](https://github.com/kubex-ecosystem/gosetup/actions/workflows/test.yml)
 
