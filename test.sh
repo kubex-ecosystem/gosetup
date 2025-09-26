@@ -15,7 +15,7 @@ run_test() {
     bash go.sh
     bash go.sh
     bash go.sh help
-    bash go.sh --version 1.19.2
+    bash go.sh --version 1.25.1
 
   else
     echo "Running tests locally (DOCKER ENVIRONMENT TEST TO PREVENT SIDE EFFECTS)"

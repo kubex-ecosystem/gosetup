@@ -5,8 +5,8 @@
 🚀 **Instale e configure o Golang facilmente no Linux, Mac e Windows—rápido e sem complicações!**
 
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/kubex-ecosystem/gosetup)
-[![License](https://img.shields.io/github/license/rafa-mori/gosetup.svg?style=flat)](https://github.com/kubex-ecosystem/gosetup/blob/main/LICENSE)
-[![Version](https://img.shields.io/github/v/release/rafa-mori/gosetup.svg?style=flat)](https://github.com/kubex-ecosystem/gosetup/releases)
+[![License](https://img.shields.io/github/license/kubex-ecosystem/gosetup.svg?style=flat)](https://github.com/kubex-ecosystem/gosetup/blob/main/LICENSE)
+[![Version](https://img.shields.io/github/v/release/kubex-ecosystem/gosetup.svg?style=flat)](https://github.com/kubex-ecosystem/gosetup/releases)
 
 ---
 
@@ -15,7 +15,7 @@
 ### 🏎️ **Método Instantâneo (wget/curl)**
 
 ```bash
-wget https://raw.githubusercontent.com/rafa-mori/gosetup/refs/heads/main/go.sh && bash gosetup.sh
+wget https://raw.githubusercontent.com/kubex-ecosystem/gosetup/refs/heads/main/go.sh && bash gosetup.sh
 ```
 
 ```bash
@@ -149,9 +149,9 @@ Automatize a instalação do Go baseada na versão especificada no `go.mod`:
 - name: Install Go (Exact version from go.mod)
   run: |
     export NON_INTERACTIVE=true
-    bash -c "$(curl -sSfL 'https://raw.githubusercontent.com/rafa-mori/gosetup/main/go.sh')" -s --version "$(grep '^go ' go.mod | awk '{print $2}')"
+    bash -c "$(curl -sSfL 'https://raw.githubusercontent.com/kubex-ecosystem/gosetup/main/go.sh')" -s --version "$(grep '^go ' go.mod | awk '{print $2}')"
 ```
 
 ---
-
+<!-- markdownlint-disable MD033 -->
 <p align="center">🚀 **Simples. Rápido. Poderoso.** 🔥</p>

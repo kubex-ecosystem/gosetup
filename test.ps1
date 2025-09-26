@@ -18,7 +18,7 @@ function Run-Test {
         & .\go.ps1 -Command install
         & .\go.ps1 -Command install
         & .\go.ps1 -Command help
-        & .\go.ps1 -Command install -Version 1.19.2
+        & .\go.ps1 -Command install -Version 1.25.1
 
     } else {
         Write-Output "Running tests locally (DOCKER ENVIRONMENT TEST TO PREVENT SIDE EFFECTS)"
@@ -41,7 +41,7 @@ function Run-Test {
             .\go.ps1 -Command install
             .\go.ps1 -Command install
             .\go.ps1 -Command help
-            .\go.ps1 -Command install -Version 1.19.2
+            .\go.ps1 -Command install -Version 1.25.1
         }
 
         if ($LASTEXITCODE -ne 0) {

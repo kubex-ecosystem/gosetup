@@ -153,5 +153,5 @@ Automate Go installation based on the version specified in `go.mod`:
 ```
 
 ---
-
+<!-- markdownlint-disable MD033 -->
 <p align="center">🚀 **Simple. Fast. Powerful.** 🔥</p>
